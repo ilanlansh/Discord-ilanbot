@@ -9,8 +9,6 @@
   "author": "ilanlansh",
   "license": "ISC",
   "dependencies": {
-    "async": "^3.2.0",
-    "asyncqueue": "0.0.4",
     "discord.js": "^12.5.1",
     "dotenv": "^8.2.0"
   }
