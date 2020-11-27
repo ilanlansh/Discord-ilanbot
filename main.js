@@ -7,8 +7,6 @@ const client = new Discord.Client();
 const prefix = ',,';
  
 const fs = require('fs');
-
-//const token = fs.readFileSync("token.txt", 'utf-8');
  
 client.commands = new Discord.Collection();
  
