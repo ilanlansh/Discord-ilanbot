@@ -4,11 +4,12 @@
   "description": "my first discord bot!!!!!",
   "main": "main.js",
   "scripts": {
-    "start": "node main.js"
+    "start": "node ."
   },
   "author": "ilanlansh",
   "license": "ISC",
   "dependencies": {
+    "asyncqueue": "0.0.4",
     "discord.js": "^12.5.1",
     "dotenv": "^8.2.0"
   }
