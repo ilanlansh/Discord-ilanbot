@@ -1,5 +1,6 @@
-//hello
+
 const Discord = require('discord.js');
+require('dotenv').config();
 
 const client = new Discord.Client();
  
@@ -7,7 +8,7 @@ const prefix = ',,';
  
 const fs = require('fs');
 
-const token = fs.readFileSync("token.txt", 'utf-8');
+//const token = fs.readFileSync("token.txt", 'utf-8');
  
 client.commands = new Discord.Collection();
  
@@ -77,4 +78,4 @@ client.on("message", message =>
     }
 });
 
-client.login(token);
+client.login(process.env.TOKEN);
