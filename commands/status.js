@@ -28,6 +28,9 @@ module.exports =
                 case "listen":
                     client.user.setActivity(status, { type: 'LISTENING' });
                     break;
+                case "fuck":
+                    client.user.setActivity(status, { type: 'FUCKING' });
+                    break;
                 case "stream":
                     client.user.setActivity(status, {
                         type: 'STREAMING',
