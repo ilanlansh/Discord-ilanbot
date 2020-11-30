@@ -1,4 +1,4 @@
-const TYPES = ["play", "watch", "listen", "stream", "fuck"];
+const TYPES = ["play", "watch", "listen", "stream"];
 module.exports = 
 {
     name: 'status',
@@ -27,9 +27,6 @@ module.exports =
                     break;
                 case "listen":
                     client.user.setActivity(status, { type: 'LISTENING' });
-                    break;
-                case "fuck":
-                    client.user.setActivity(status, { type: 'FUCKING' });
                     break;
                 case "stream":
                     client.user.setActivity(status, {
