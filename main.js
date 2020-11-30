@@ -20,7 +20,14 @@ for(const file of commandFiles)
 
 client.once("ready", () =>
 {
-    console.log("ILANBOT IS ONLINE!!!!\n");
+    console.log(`Logged in as ${client.user.tag}!`);
+    client.user.setPresence({
+        status: "online", 
+        game: {
+            name: "your commands",
+            type: "LISTENING"
+        }
+    });
 });
 
 client.on("message", message =>
