@@ -13,7 +13,6 @@ module.exports =
                 if(message.author.id == "381379655665713155" || message.author.id == "535445949124837389")
                 {
                     message.channel.send("> <:emergency_meeting:760134052651991112>\n<@&778250388616118352> was summoned for an emergency meeting by <@" + message.author.id + "> to play Among Us!!!!\n https://discord.gg/hjP53CwzmQ");
-                    // message.delete();
 
                     var today = new Date();
 
@@ -35,7 +34,6 @@ module.exports =
                         {
                             map.set(message.author.id, new Date().getTime());
                             message.channel.send("> <:emergency_meeting:760134052651991112>\n<@&778250388616118352> was summoned for an emergency meeting by <@" + message.author.id + "> to play Among Us!!!!\n https://discord.gg/hjP53CwzmQ");
-                            // message.delete();
 
                             var today = new Date();
 
@@ -62,7 +60,6 @@ module.exports =
                     {
                         map.set(message.author.id, new Date().getTime());
                         message.channel.send("> <:emergency_meeting:760134052651991112>\n<@&778250388616118352> was summoned for an emergency meeting by <@" + message.author.id + "> to play Among Us!!!!\n https://discord.gg/hjP53CwzmQ");
-                        // message.delete();
 
                         var today = new Date();
 
