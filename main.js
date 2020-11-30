@@ -23,7 +23,7 @@ client.once("ready", () =>
     console.log(`Logged in as ${client.user.tag}!`);
     
     client.user.setStatus("Online");
-    client.user.setActivity('cs:go with my creator', { type: 'PLAYING' });
+    client.user.setActivity('cs:go with my owner', { type: 'PLAYING' });
 });
 
 client.on("message", message =>
