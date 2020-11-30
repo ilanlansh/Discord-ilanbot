@@ -1,6 +1,7 @@
 
 const Discord = require('discord.js');
 require('dotenv').config();
+const colors = require("colors");
 
 const client = new Discord.Client();
  

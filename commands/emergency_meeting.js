@@ -1,12 +1,10 @@
-const { Client } = require("discord.js");
-
 var map = new Map();
 
 module.exports = 
 {
     name: 'emergency_meeting',
     description: "when someone sends the emergency button emoji, @Among Us gets tagged and summoned to play among us.",
-    execute(message, args, client)
+    execute(message, args)
     {
         if(message.member.roles.cache.find(r => r.id === "778250388616118352"))
         {
