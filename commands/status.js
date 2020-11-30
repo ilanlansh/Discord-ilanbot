@@ -21,6 +21,7 @@ module.exports =
             if(status == "")
             {
                 message.channel.send("please enter a status that isn't blank.");
+                return;
             }
 
             var today = new Date();
@@ -38,17 +39,17 @@ module.exports =
                 case "play":
                     client.user.setActivity(status, { type: 'PLAYING' });
                     message.channel.send(`status changed to **Playing ${status}**`);
-                    console.log(`[${h}:${m}:${s}:] status changed to ` + `Playing ${status}`.bold());
+                    console.log(`[${h}:${m}:${s}:] status changed to Playing ${status}`);
                     break;
                 case "watch":
                     client.user.setActivity(status, { type: 'WATCHING' });
                     message.channel.send(`status changed to **Watching ${status}**`);
-                    console.log(`[${h}:${m}:${s}:] status changed to ` + `Watching ${status}`.bold());
+                    console.log(`[${h}:${m}:${s}:] status changed to Watching ${status}`);
                     break;
                 case "listen":
                     client.user.setActivity(status, { type: 'LISTENING' });
                     message.channel.send(`status changed to **Listening to ${status}**`);
-                    console.log(`[${h}:${m}:${s}:] status changed to ` + `Listening to ${status}`.bold());
+                    console.log(`[${h}:${m}:${s}:] status changed to Listening to ${status}`);
                     break;
                 case "stream":
                     client.user.setActivity(status, {
@@ -56,7 +57,7 @@ module.exports =
                         url: 'https://www.twitch.tv/ilanlansh'
                     });
                     message.channel.send(`status changed to **Streaming ${status}**`);
-                    console.log(`[${h}:${m}:${s}:] status changed to ` + `Streaming ${status}`.bold());
+                    console.log(`[${h}:${m}:${s}:] status changed to Streaming ${status}`);
                     break;
             }
         }
