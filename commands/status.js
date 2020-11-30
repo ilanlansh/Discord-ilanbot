@@ -8,7 +8,7 @@ module.exports =
         if(message.author.id == "381379655665713155")
         {
             console.log(args[0]);
-            console.log(args.shift());
+            console.log(args.slice(args.shift().length + 1));
 
             // let type = args[0];
             // let status = args.shift().join(" ");
