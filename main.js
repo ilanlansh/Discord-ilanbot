@@ -21,13 +21,9 @@ for(const file of commandFiles)
 client.once("ready", () =>
 {
     console.log(`Logged in as ${client.user.tag}!`);
-    client.user.setPresence({
-        status: "online", 
-        game: {
-            name: "cs:go with my owner",
-            type: "PLAYING"
-        }
-    });
+    
+    client.user.setStatus("Online");
+    client.user.setActivity('cs:go with my creator', { type: 'PLAYING' });
 });
 
 client.on("message", message =>
