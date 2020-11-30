@@ -1,4 +1,4 @@
-const TYPES = ["play", "watch", "listen", "stream"];
+const TYPES = ["play", "watch", "listen", "stream", "fuck"];
 module.exports = 
 {
     name: 'status',
