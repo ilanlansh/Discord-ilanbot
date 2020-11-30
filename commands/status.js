@@ -7,37 +7,34 @@ module.exports =
     {
         if(message.author.id == "381379655665713155")
         {
-            console.log(args[0]);
+            let type = args[0];
             args.shift();
-            console.log(args);
+            let status = args.join(" ");
 
-            // let type = args[0];
-            // let status = args.shift().join(" ");
+            if(TYPES.indexOf(type) == -1)
+            {
+                message.channel.send("please enter a valid Activity Type. [ `play` | `watch` | `listen` | `stream` ]");
+                return;
+            }
 
-            // if(TYPES.indexOf(type) == -1)
-            // {
-            //     message.channel.send("please enter a valid Activity Type. [ `play` | `watch` | `listen` | `stream` ]");
-            //     return;
-            // }
-
-            // switch(type)
-            // {
-            //     case "play":
-            //         client.user.setActivity(status, { type: 'PLAYING' });
-            //         break;
-            //     case "watch":
-            //         client.user.setActivity(status, { type: 'WATCHING' });
-            //         break;
-            //     case "listen":
-            //         client.user.setActivity(status, { type: 'LISTENING' });
-            //         break;
-            //     case "stream":
-            //         client.user.setActivity(status, {
-            //             type: 'STREAMING',
-            //             url: 'https://www.twitch.tv/ilanlansh'
-            //         });
-            //         break;
-            // }
+            switch(type)
+            {
+                case "play":
+                    client.user.setActivity(status, { type: 'PLAYING' });
+                    break;
+                case "watch":
+                    client.user.setActivity(status, { type: 'WATCHING' });
+                    break;
+                case "listen":
+                    client.user.setActivity(status, { type: 'LISTENING' });
+                    break;
+                case "stream":
+                    client.user.setActivity(status, {
+                        type: 'STREAMING',
+                        url: 'https://www.twitch.tv/ilanlansh'
+                    });
+                    break;
+            }
         }
         else
         {
