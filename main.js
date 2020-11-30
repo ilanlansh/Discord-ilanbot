@@ -24,8 +24,8 @@ client.once("ready", () =>
     client.user.setPresence({
         status: "online", 
         game: {
-            name: "your commands",
-            type: "LISTENING"
+            name: "cs:go with my owner",
+            type: "PLAYING"
         }
     });
 });
