@@ -1,4 +1,4 @@
-const TYPES = ["play", "watch", "listen", "stream"];
+const TYPES = ["play", "watch", "listen", "stream", "compete"];
 
 module.exports = 
 {
@@ -14,7 +14,7 @@ module.exports =
 
             if(TYPES.indexOf(type) == -1)
             {
-                message.channel.send("please enter a valid Activity Type. [ `play` | `watch` | `listen` | `stream` ]");
+                message.channel.send("please enter a valid Activity Type. [ `play` | `watch` | `listen` | `stream` | `compete` ]");
                 return;
             }
 
@@ -51,6 +51,12 @@ module.exports =
                 client.user.setActivity(status, { type: 'LISTENING' });
                 message.channel.send(`status changed to **Listening to ${status}**`);
                 console.log('[' + h + ':' + m + ':' + s + "] status changed to " + `Listening to ${status}`);
+            }
+            else if(type == "compete")
+            {
+                client.user.setActivity(status, { type: 'COMPETING' });
+                message.channel.send(`status changed to **Competing in ${status}**`);
+                console.log('[' + h + ':' + m + ':' + s + "] status changed to " + `Competing in ${status}`);
             }
             else if(type == "stream")
             {
