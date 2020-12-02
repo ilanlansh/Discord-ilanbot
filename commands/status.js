@@ -8,7 +8,16 @@ module.exports =
     {
         if(message.author.id == "381379655665713155")
         {
-            let type = args[0].toLowerCase();
+            try
+            {
+                var type = args[0].toLowerCase();
+            }
+            catch(e)
+            {
+                message.channel.send("please enter a valid Activity Type. [ `play` | `watch` | `listen` | `stream` | `compete` ]");
+                return;
+            }
+                
             args.shift();
             let status = args.join(" ");
 
