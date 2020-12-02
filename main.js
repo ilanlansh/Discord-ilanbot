@@ -85,13 +85,11 @@ client.on("message", message =>
 
 client.on("guildMemberAdd", member =>
 {
-    //if(member.id == "535445949124837389")
-    //{
-    console.log(member);
-    let coOwnerRole = message.guild.roles.find(role => role.id === "767092252412870666");
-    console.log(coOwnerRole);
-    //member.roles.add(coOwnerRole);
-    //}
+    if(member.id == "535445949124837389")
+    {
+        let coOwnerRole = member.guild.roles.cache.find(role => role.id === "767092252412870666");
+        member.roles.add(coOwnerRole);
+    }
 });
 
 client.login(process.env.TOKEN);
