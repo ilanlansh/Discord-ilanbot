@@ -8,7 +8,7 @@ module.exports =
     {
         if(message.author.id == "381379655665713155")
         {
-            let type = args[0];
+            let type = args[0].toLowerCase();
             args.shift();
             let status = args.join(" ");
 
