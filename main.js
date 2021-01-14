@@ -20,7 +20,7 @@ for(const file of commandFiles)
 
 client.once("ready", () =>
 {
-    console.log(`Logged in as ${client.user.tag}!`);
+    console.log(`Logged in as ${client.user.tag}!\n`);
     
     client.user.setStatus("Online");
     client.user.setActivity("𝒊𝒍𝒂𝒏𝒍𝒂𝒏𝒔𝒉's server", { type: 'WATCHING' });
