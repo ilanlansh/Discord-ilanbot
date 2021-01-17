@@ -84,7 +84,7 @@ client.on("message", message =>
 
 client.on("guildMemberAdd", member =>
 {
-    if(member.id == "535445949124837389")
+    if(member.id == "535445949124837389") // adds a co-owner role to my discord server's co-owner automatically
     {
         let coOwnerRole = member.guild.roles.cache.find(role => role.id === "767092252412870666");
         member.roles.add(coOwnerRole);
