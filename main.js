@@ -17,6 +17,16 @@ for(const file of commandFiles)
     client.commands.set(command.name, command);
 }
 
+const IDs = 
+{
+    ownerUserID:      process.env.OWNERUSERID,
+    coOwnerUserID:    process.env.COOWNERUSERID,
+    coOwnerRoleID:    process.env.COOWNERROLEID,
+    emojiID:          process.env.EMOJIID,
+    proAURoleID:      process.env.PAUROLEID,
+    generalChannelID: process.env.GENERALCHANNELID
+}
+
 client.once("ready", () =>
 {
     console.log(`Logged in as ${client.user.tag}!\n`);
@@ -27,21 +37,21 @@ client.once("ready", () =>
 
 client.on("message", message =>
 {
-    if(message.content == "<:emergency_meeting:760134052651991112>")   // Emergency Meeting
+    if(message.content == `<:emergency_meeting:${IDs.emojiID}>`)   // Emergency Meeting
     {
-        client.commands.get('emergency_meeting').execute(message, null, client);
+        client.commands.get('emergency_meeting').execute(message, IDs);
         return;
     }
 
     /** UNUSED
     * 
-    * if(message.channel.id == "759784107399315457")
+    * if(message.channel.id == "(old-goodbye-channel's-id)")
     * {
     *     client.commands.get('reactF').execute(message, null);
     *     return;
     * }
     * 
-    * if(message.channel.id == "755051181499482222" && message.author.id == "716390085896962058")
+    * if(message.channel.id == "(old-pokemon-channel's-id)" && message.author.id == "(pokemon-bot's-id)")
     * {
     *     client.commands.get('pokemon').execute(message, null);
     *     return;
@@ -88,9 +98,10 @@ client.on("message", message =>
 
 client.on("guildMemberAdd", member =>
 {
-    if(member.id == process.env.COOWNERUSERID) // adds a co-owner role to my discord server's co-owner automatically when he joins
+    // adds a co-owner role to my discord server's co-owner automatically when he joins
+    if(member.id == IDs.coOwnerUserID)
     {
-        let coOwnerRole = member.guild.roles.cache.find(role => role.id === process.env.COOWNERROLEID);
+        let coOwnerRole = member.guild.roles.cache.find(role => role.id === IDs.coOwnerRoleID);
         member.roles.add(coOwnerRole);
     }
 });
