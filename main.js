@@ -33,17 +33,21 @@ client.on("message", message =>
         return;
     }
 
-    if(message.channel.id == "759784107399315457")   // React F to leaving message
-    {
-        client.commands.get('reactF').execute(message, null);
-        return;
-    }
-    
-    if(message.channel.id == "755051181499482222" && message.author.id == "716390085896962058")   // notifying members when a pokemon spawns
-    {
-        client.commands.get('pokemon').execute(message, null);
-        return;
-    }
+    /** UNUSED
+    * 
+    * if(message.channel.id == "759784107399315457")
+    * {
+    *     client.commands.get('reactF').execute(message, null);
+    *     return;
+    * }
+    * 
+    * if(message.channel.id == "755051181499482222" && message.author.id == "716390085896962058")
+    * {
+    *     client.commands.get('pokemon').execute(message, null);
+    *     return;
+    * }
+    * 
+    */
 
     // ======================================================================================
 
@@ -84,9 +88,9 @@ client.on("message", message =>
 
 client.on("guildMemberAdd", member =>
 {
-    if(member.id == "535445949124837389") // adds a co-owner role to my discord server's co-owner automatically
+    if(member.id == process.env.COOWNERUSERID) // adds a co-owner role to my discord server's co-owner automatically when he joins
     {
-        let coOwnerRole = member.guild.roles.cache.find(role => role.id === "767092252412870666");
+        let coOwnerRole = member.guild.roles.cache.find(role => role.id === process.env.COOWNERROLEID);
         member.roles.add(coOwnerRole);
     }
 });
