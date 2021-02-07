@@ -10,10 +10,10 @@ module.exports =
         <@&${IDs.ProAURoleID}> was summoned for an emergency meeting by <@${message.author.id}> to play Among Us!!!!\n
         https://discord.gg/hjP53CwzmQ`;
         
-        // only members with "pro among us" role are allowed to use this
-        if(!message.member.roles.cache.find(role => role.id === IDs.ProAURoleID))
+        // only available in #general
+        if(!message.channel.id === IDs.generalChannelID)
         {
-            message.channel.send("You're not allowed to use this.");
+            message.channel.send(`You can't use that here!!!\nThis command is only available in <#${IDs.generalChannelID}>`);
             return;
         }
  
@@ -23,14 +23,13 @@ module.exports =
             message.channel.send(M);
             return;
         }
-
-        // only available in #general
-        if(!message.channel.id === IDs.generalChannelID)
+        
+        // only members with "pro among us" role are allowed to use this
+        if(!message.member.roles.cache.find(role => role.id === IDs.ProAURoleID))
         {
-            message.channel.send(`You can't use that here!!!\nThis command is only available in <#${IDs.generalChannelID}>`);
+            message.channel.send("You're not allowed to use this.");
             return;
         }
-
        
         if(map.has(message.author.id))
         {
