@@ -10,17 +10,17 @@ module.exports =
         <@&${IDs.ProAURoleID}> was summoned for an emergency meeting by <@${message.author.id}> to play Among Us!!!!\n
         https://discord.gg/hjP53CwzmQ`;
         
-        // administrators bypass all requirements
-        if(message.member.hasPermission("ADMINISTRATOR"))
-        {
-            message.channel.send(M);
-            return;
-        }
-
         // only members with "pro among us" role are allowed to use this
         if(!message.member.roles.cache.find(role => role.id === IDs.ProAURoleID))
         {
             message.channel.send("You're not allowed to use this.");
+            return;
+        }
+ 
+        // administrators bypass all requirements
+        if(message.member.hasPermission("ADMINISTRATOR"))
+        {
+            message.channel.send(M);
             return;
         }
 
