@@ -1,5 +1,6 @@
 
 const Discord = require('discord.js');
+require('discord-reply');
 require('dotenv').config();
 const fs = require('fs');
 
@@ -23,8 +24,9 @@ const IDs =
     coOwnerUserID:    process.env.COOWNERUSERID,
     coOwnerRoleID:    process.env.COOWNERROLEID,
     emojiID:          process.env.EMOJIID,
-    proAURoleID:      process.env.PAUROLEID,
-    generalChannelID: process.env.GENERALCHANNELID
+    SussyBakaRoleID:  process.env.SUSSKYBAKAROLEID,
+    generalChannelID: process.env.GENERALCHANNELID,
+    SussyBakasVCID:   process.env.SUSSYBAKASVCID
 }
 
 client.once("ready", () =>
@@ -69,10 +71,6 @@ client.on("message", message =>
     if(command === "ping")
     {
         client.commands.get('ping').execute(message, args);
-    }
-    else if(command === "pong")
-    {
-        client.commands.get('pong').execute(message, args);
     }
     else if(command === "no!" || command === "no")
     {
