@@ -78,7 +78,10 @@ client.on("message", message =>
     }
     else if(command === "log")
     {
-        client.commands.get('log').execute(message, args);
+        if(message.author.id == IDs.ownerUserID)
+        {
+            client.commands.get('log').execute(message, args);
+        }
     }
     else if(command === "keyboardify" || command === "key")
     {
