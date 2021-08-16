@@ -6,7 +6,7 @@ module.exports =
     description: "when someone sends the emergency button emoji, @Among Us gets tagged and summoned to play among us.",
     execute(message, IDs)
     {
-        const M = `> <:emergency_meeting:${IDs.emojiID}>\n<@&${IDs.proAURoleID}> was summoned for an emergency meeting by <@${message.author.id}> to play Among Us!!!!\nhttps://discord.gg/JMhEqf3R4k`;
+        const M = `<@&${IDs.SussyBakaRoleID}> was summoned for an emergency meeting by <@${message.author.id}>!!!\n\\⬇\\⬇\\⬇\\⬇\\⬇\\⬇\\⬇\\⬇\\⬇\n<#${IDs.SussyBakasVCID}>`;
         
         // only available in #general
         if(!(message.channel.id === IDs.generalChannelID))
@@ -18,12 +18,12 @@ module.exports =
         // administrators bypass all requirements
         if(message.member.hasPermission("ADMINISTRATOR"))
         {
-            message.channel.send(M);
+            message.lineReply(M);
             return;
         }
         
-        // only members with "pro among us" role are allowed to use this
-        if(!message.member.roles.cache.find(role => role.id === IDs.proAURoleID))
+        // only members with "Sussy Baka" role are allowed to use this
+        if(!message.member.roles.cache.find(role => role.id === IDs.SussyBakaRoleID))
         {
             message.channel.send("You're not allowed to use this.");
             return;
@@ -34,7 +34,7 @@ module.exports =
             if(new Date().getTime() - map.get(message.author.id) >= 600000)
             {
                 map.set(message.author.id, new Date().getTime());
-                message.channel.send(M);
+                message.lineReply(M);
             }
             else
             {
@@ -50,7 +50,7 @@ module.exports =
         else
         {
             map.set(message.author.id, new Date().getTime());
-            message.channel.send(M);
+            message.lineReply(M);
         }
     }
 }
